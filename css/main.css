@@ -1,26 +1,15 @@
 body, html{
     display: grid;
-    grid-template-columns: minmax(2fr 1200px) 1fr;
-    grid-template-areas: 
-    " main posts "
-    " skills posts ";
+    grid-template-areas:
+    " main "
+    " software "
+    " software-text "
+    " divider1 "
+    " skills "
+    " posts ";
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-}
-
-* {
-    box-sizing: border-box;
-    }
-
-@media(max-width: 1600px) {
-    body {
-        grid-template-areas:
-        " main "
-        " skills "
-        " posts ";
-        max-width: 1200px;
-    }
 }
 
 /* :root{
@@ -44,10 +33,11 @@ header{
     font-family: 'Montserrat', sans-serif;
     display: grid;
     grid-template-rows: 100px 1fr;
-    grid-template-columns: 1fr 2fr 350px 170px;
+    grid-template-columns: 1fr 2fr 350px .5fr;
     grid-template-areas:
     " nav nav image aside "
-    " text text image aside "
+    " text text image aside ";
+    clip-path: polygon(100% 0, 100% 90%, 0 100%, 0 0);
 }
 
 header .heading{
@@ -69,11 +59,12 @@ header .heroImg{
     background: url("/images/benfelda.jpg");
     background-size: cover;
     background-position: center;
-    height:700px;
-    width:300px;
+    height:800px;
+    width:280px;
     margin-left: 30px;
-    clip-path: polygon(0 0, 100% 0, 100% 550px, 50% 100%, 0 550px);
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 550px, 50% 100%, 0 550px);
+    clip-path: polygon()
+    /* clip-path: polygon(0 0, 100% 0, 100% 550px, 50% 100%, 0 550px);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 550px, 50% 100%, 0 550px); */
 }
 
 section.about{
@@ -98,32 +89,83 @@ nav > ul{
     align-items: center;
     justify-content: space-around;
     margin: 0 0 -5px 0;
+    max-width: 700px;
 }
 
 nav > ul > li{
     display: inline;
     background: white;
     z-index: 1;
+    cursor: pointer;
+}
+
+section.software {
+    grid-area: software;
+    background: var(--dark-accent);
+    position: relative;
+    height: 800px;
+    margin-top: -25px;
+    border-top: 1px solid var(--dark-shades);
+    clip-path: polygon(100% 0, 100% 730px, 0 100%, 0 70px);
+}
+
+section.software > img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(100% 2px, 100% 726px, 0 796px, 0 72px);
+}
+section.software .overlay {
+    clip-path: polygon(100% 2px, 100% 726px, 0 796px, 0 72px);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--primary);
+    z-index: 1;
+    opacity: .4;
+}
+
+section.software-text{
+    grid-area: software-text;
+    width: 60%;
+    margin: auto;
+    padding: 30px;
+}
+
+section.software-text>img{
+    float: left;
+    shape-outside: circle();
+    margin: 40px;
+}
+
+div.art-divider{
+    grid-area: divider1;
+    height: 70px;
+    width: 100%;
+    background: var(--dark-accent);
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
 }
 
 section.art {   
     grid-area: skills;
     display: grid;
-    grid-gap: 70px;
-    grid-template-columns: repeat(auto-fill, 300px);
-    margin-top: -120px;
-    direction: rtl;
+    grid-gap: 10px;
+    grid-auto-rows: 250px 350px;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    background: var(--dark-accent);
+    padding: 30px;
 }
 
 section.art > div.piece {
-    position: relative;
-    height: 300px;
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    width: 300px;
-    transition: -webkit-clip-path ease-out .3;
-    background: var(--primary);
     overflow: hidden;
+    margin:0;
+    position: relative;
+    border: solid black 2px;
+    cursor: pointer;
 }
 
 section.art>div.piece>img{
@@ -137,7 +179,7 @@ section.art>div.piece>img{
 section.art>div.piece>figcaption {
     position:absolute;
     bottom:0;
-    background: var(--primary);
+    background: var(--dark-accent);
     color: white;
     width:100%;
     height:100%;
@@ -148,18 +190,22 @@ section.art>div.piece>figcaption {
     transition: all ease-out .3s;
 }
 
-section.art>div.piece:hover {
-    clip-path: polygon(0% 0%, 100% 0%, 1000% 100%, 0% 100%);
-
-}
-
 section.art>div.piece:hover img {
-    transform:scale(1.2);
+    transform:scale(1);
 }
 
 section.art>div.piece:hover figcaption {
-    opacity:.7;
+    opacity:0;
 }
+
+    @media(min-width:480px){
+        .piece:first-child {
+            grid-area: 1 / 1 / span 2 / span 2;
+        }
+        .piece:nth-child(2n) {
+            grid-row: span 2;
+        }
+    }
 
 section.art > div.text-piece{
     display: flex;
