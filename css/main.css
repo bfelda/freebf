@@ -47,7 +47,6 @@ header .heading{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     padding: 6em;
     border-right: solid 1px var(--dark-accent);
     border-top: solid 1px var(--dark-accent);
@@ -62,14 +61,6 @@ header .heroImg{
     height:800px;
     width:280px;
     margin-left: 30px;
-    clip-path: polygon()
-    /* clip-path: polygon(0 0, 100% 0, 100% 550px, 50% 100%, 0 550px);
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 550px, 50% 100%, 0 550px); */
-}
-
-section.about{
-    display: grid;
-    grid-template-areas: aside;
 }
 
 nav{
@@ -206,6 +197,61 @@ section.art>div.piece:hover figcaption {
             grid-row: span 2;
         }
     }
+    
+    @media(max-width:850px) {        
+        header{
+            height: 500px;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: 1fr 1fr 5fr;
+            grid-template-areas:
+            " nav nav "
+            " test text "
+            " image text";
+            clip-path: polygon(100% 0, 100% 90%, 0 100%, 0 0);
+        }
+
+        header .heading{
+            padding: 2em;
+            border-right: none;
+            border-top: none;
+            border-top-right-radius: 50px;
+        }
+
+        header .heroImg{
+            grid-area: image;
+            background: url("/images/benfelda.jpg");
+            background-size: cover;
+            background-position: center;
+            height:350px;
+            width:200px;
+        }
+
+        nav{
+            grid-area: nav;
+            margin-right: 80px;
+            font-family: 'Montserrat Subrayada', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            color: var(--dark-accent);
+        }
+        
+        nav > ul{
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin: 0 0 -5px 0;
+            max-width: 700px;
+        }
+        
+        nav > ul > li{
+            display: inline;
+            background: white;
+            z-index: 1;
+            cursor: pointer;
+        }
+}
 
 section.art > div.text-piece{
     display: flex;
