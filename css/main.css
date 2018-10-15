@@ -28,6 +28,10 @@ body, html{
     --light-shades: #F3EEEF;
 }
 
+p {
+    line-height: 1.5em;
+}
+
 header{
     grid-area: main;
     font-family: 'Montserrat', sans-serif;
@@ -38,6 +42,10 @@ header{
     " nav nav image aside "
     " text text image aside ";
     clip-path: polygon(100% 0, 100% 90%, 0 100%, 0 0);
+}
+
+header section.title{
+    grid-area: title;
 }
 
 header .heading{
@@ -51,6 +59,11 @@ header .heading{
     border-right: solid 1px var(--dark-accent);
     border-top: solid 1px var(--dark-accent);
     border-top-right-radius: 50px;
+}
+
+
+header p.quote {
+    color: var(--primary);
 }
 
 header .heroImg{
@@ -94,10 +107,10 @@ section.software {
     grid-area: software;
     background: var(--dark-accent);
     position: relative;
-    height: 800px;
+    height: 700px;
     margin-top: -25px;
     border-top: 1px solid var(--dark-shades);
-    clip-path: polygon(100% 0, 100% 730px, 0 100%, 0 70px);
+    clip-path: polygon(100% 0, 100% 90%, 0 100%, 0 10%);
 }
 
 section.software > img {
@@ -105,10 +118,10 @@ section.software > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    clip-path: polygon(100% 2px, 100% 726px, 0 796px, 0 72px);
+    clip-path: polygon(100% 1%, 100% 89%, 0 99%, 0 11%);
 }
 section.software .overlay {
-    clip-path: polygon(100% 2px, 100% 726px, 0 796px, 0 72px);
+    clip-path: polygon(100% 1%, 100% 89%, 0 99%, 0 11%);
     position: absolute;
     top: 0;
     bottom: 0;
@@ -144,7 +157,7 @@ section.art {
     grid-area: skills;
     display: grid;
     grid-gap: 10px;
-    grid-auto-rows: 250px 350px;
+    grid-auto-rows: 250px;
     grid-auto-flow: dense;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     background: var(--dark-accent);
@@ -193,21 +206,20 @@ section.art>div.piece:hover figcaption {
         .piece:first-child {
             grid-area: 1 / 1 / span 2 / span 2;
         }
-        .piece:nth-child(2n) {
+        .piece:nth-child(3n) {
             grid-row: span 2;
         }
     }
     
-    @media(max-width:850px) {        
+    @media(max-width:850px) {                  
         header{
             height: 500px;
             grid-template-columns: 1fr 2fr;
             grid-template-rows: 1fr 1fr 5fr;
             grid-template-areas:
             " nav nav "
-            " test text "
+            " . text "
             " image text";
-            clip-path: polygon(100% 0, 100% 90%, 0 100%, 0 0);
         }
 
         header .heading{
@@ -218,39 +230,49 @@ section.art>div.piece:hover figcaption {
         }
 
         header .heroImg{
-            grid-area: image;
-            background: url("/images/benfelda.jpg");
-            background-size: cover;
-            background-position: center;
             height:350px;
             width:200px;
         }
 
-        nav{
-            grid-area: nav;
-            margin-right: 80px;
-            font-family: 'Montserrat Subrayada', sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            color: var(--dark-accent);
+        section.software {
+            height: 250px;
+            clip-path: polygon(100% 0, 100% 80%, 0 100%, 0 20%);
         }
         
-        nav > ul{
-            list-style-type: none;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            margin: 0 0 -5px 0;
-            max-width: 700px;
+        section.software > img {
+            clip-path: polygon(100% 1%, 100% 79%, 0 99%, 0 21%);
+        }
+        section.software .overlay {
+            clip-path: polygon(100% 1%, 100% 79%, 0 99%, 0 21%);
+        }
+
+        section.software-text{
+            width: auto;
+            margin: auto;
+            padding: 20px;
         }
         
-        nav > ul > li{
-            display: inline;
-            background: white;
-            z-index: 1;
-            cursor: pointer;
+        section.software-text>img{
+            float: left;
+            shape-outside: circle();
+            margin: 20px;
+            width: 100px;
         }
+}
+
+
+@media(max-width:1024px) {
+    section.software {
+        height: 400px;
+        clip-path: polygon(100% 0, 100% 85%, 0 100%, 0 15%);
+    }
+    
+    section.software > img {
+        clip-path: polygon(100% 1%, 100% 84%, 0 99%, 0 16%);
+    }
+    section.software .overlay {
+        clip-path: polygon(100% 1%, 100% 84%, 0 99%, 0 16%);
+    }
 }
 
 section.art > div.text-piece{
