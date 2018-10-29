@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 239 240">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Web_1920_1);
+      }
+
+      .cls-2 {
+        fill: #595957;
+      }
+
+      .cls-3 {
+        fill: #54a7fe;
+        font-size: 141px;
+        font-family: SegoeUI, Segoe UI;
+      }
+    </style>
+    <clipPath id="clip-Web_1920_1">
+      <rect width="240" height="240"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_1" data-name="Web 1920 – 1" class="cls-1">
+    <circle id="Ellipse_1" data-name="Ellipse 1" class="cls-2" cx="119" cy="119" r="119"/>
+    <text id="_53" data-name="53" class="cls-3" transform="translate(43 173)"><tspan x="0" y="0">53</tspan></text>
+  </g>
+</svg>

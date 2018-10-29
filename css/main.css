@@ -1,15 +1,27 @@
 body, html{
+    margin: 0;
+    padding: 0;
+}
+
+body{
     display: grid;
     grid-template-areas:
     " main "
     " software "
     " software-text "
     " divider1 "
-    " skills "
-    " posts ";
-    margin: 0;
-    padding: 0;
+    " frontend "
+    " divider2 "
+    " blog "
+    " divider3 "
+    " contact ";
+    scroll-behavior: smooth;
     font-family: 'Montserrat', sans-serif;
+}
+
+p{
+    font-size: 1.2em;
+    line-height: 1.5em;
 }
 
 /* :root{
@@ -26,10 +38,16 @@ body, html{
     --primary: #98687C;
     --light-accent: #919A98;
     --light-shades: #F3EEEF;
+
+    --facebook: #3b5998;
+    --linkedin: #0077b5;
+    --twitter: #55acee;
+    --youtube: #b31217;
 }
 
 p {
-    line-height: 1.5em;
+    line-height: 1.7em;
+    color: var(--dark-shades);
 }
 
 header{
@@ -37,7 +55,7 @@ header{
     font-family: 'Montserrat', sans-serif;
     display: grid;
     grid-template-rows: 100px 1fr;
-    grid-template-columns: 1fr 2fr 350px .5fr;
+    grid-template-columns: 1fr 2fr 350px 1fr;
     grid-template-areas:
     " nav nav image aside "
     " text text image aside ";
@@ -55,15 +73,20 @@ header .heading{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 6em;
+    padding: 4em;
     border-right: solid 1px var(--dark-accent);
     border-top: solid 1px var(--dark-accent);
     border-top-right-radius: 50px;
 }
 
 
+header>.phoneimg>.heroImg {
+    display: none;
+}
+
 header p.quote {
     color: var(--primary);
+    font-size: 1.5em;
 }
 
 header .heroImg{
@@ -93,7 +116,7 @@ nav > ul{
     align-items: center;
     justify-content: space-around;
     margin: 0 0 -5px 0;
-    max-width: 700px;
+    max-width: 400px;
 }
 
 nav > ul > li{
@@ -101,6 +124,11 @@ nav > ul > li{
     background: white;
     z-index: 1;
     cursor: pointer;
+}
+
+nav > ul > li > a {
+    color: var(--dark-shades);
+    text-decoration: none;
 }
 
 section.software {
@@ -140,6 +168,7 @@ section.software-text{
 }
 
 section.software-text>img{
+    width: 200px;
     float: left;
     shape-outside: circle();
     margin: 40px;
@@ -153,9 +182,26 @@ div.art-divider{
     clip-path: polygon(0 0, 100% 100%, 0 100%);
 }
 
+div.frontend-divider{
+    grid-area: divider2;
+    height: 70px;
+    width: 100%;
+    background: var(--dark-accent);
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+div.contact-top{
+    grid-area: divider3;
+    margin-top: -70px;
+    height: 70px;
+    width: 100%;
+    background: var(--primary);
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
 section.art {   
     grid-area: skills;
-    display: grid;
+    display: none;
     grid-gap: 10px;
     grid-auto-rows: 250px;
     grid-auto-flow: dense;
@@ -206,10 +252,22 @@ section.art>div.piece:hover figcaption {
         .piece:first-child {
             grid-area: 1 / 1 / span 2 / span 2;
         }
-        .piece:nth-child(3n) {
-            grid-row: span 2;
-        }
     }
+
+@media(max-width:1024px) {
+    section.software {
+        height: 400px;
+        clip-path: polygon(100% 0, 100% 85%, 0 100%, 0 15%);
+    }
+    
+    section.software > img {
+        clip-path: polygon(100% 1%, 100% 84%, 0 99%, 0 16%);
+    }
+    section.software .overlay {
+        clip-path: polygon(100% 1%, 100% 84%, 0 99%, 0 16%);
+    }
+}
+
     
     @media(max-width:850px) {                  
         header{
@@ -229,21 +287,30 @@ section.art>div.piece:hover figcaption {
             border-top-right-radius: 50px;
         }
 
+        header p.quote {
+            color: var(--primary);
+            font-size: 1.2em;
+        }
+
+        header .heading h1 {
+            display: none;
+        }
+
         header .heroImg{
             height:350px;
             width:200px;
         }
 
         section.software {
-            height: 250px;
-            clip-path: polygon(100% 0, 100% 80%, 0 100%, 0 20%);
+            height: 400px;
+            clip-path: polygon(100% 0, 100% 85%, 0 100%, 0 15%);
         }
         
         section.software > img {
-            clip-path: polygon(100% 1%, 100% 79%, 0 99%, 0 21%);
+            clip-path: polygon(100% 1%, 100% 84%, 0 99%, 0 16%);
         }
         section.software .overlay {
-            clip-path: polygon(100% 1%, 100% 79%, 0 99%, 0 21%);
+            clip-path: polygon(100% 1%, 100% 84%, 0 99%, 0 16%);
         }
 
         section.software-text{
@@ -260,20 +327,63 @@ section.art>div.piece:hover figcaption {
         }
 }
 
+@media(max-width:480px) {
 
-@media(max-width:1024px) {
-    section.software {
-        height: 400px;
-        clip-path: polygon(100% 0, 100% 85%, 0 100%, 0 15%);
+    nav{
+        display: none;
     }
-    
+
+    header p.quote{
+        font-size: 1.3em;
+        margin-block-start: 0;
+    }
+
+    header .heroImg{
+    display: none;
+    }
+
+    header>.phoneimg {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header>.phoneimg>.heroImg {
+        display: block;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        margin-left: 0;
+    }
+
+    section.software {
+        height: 250px;
+        clip-path: polygon(100% 0, 100% 80%, 0 100%, 0 20%);
+    }
+
     section.software > img {
-        clip-path: polygon(100% 1%, 100% 84%, 0 99%, 0 16%);
+        clip-path: polygon(100% 1%, 100% 79%, 0 99%, 0 21%);
     }
     section.software .overlay {
-        clip-path: polygon(100% 1%, 100% 84%, 0 99%, 0 16%);
+        clip-path: polygon(100% 1%, 100% 79%, 0 99%, 0 21%);
+    }
+
+    header{
+        height: 450px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 150px 1fr;
+        grid-template-areas:
+        " phoneimg "
+        " text";
+    }
+
+    header>.heading {
+        padding: 1em;
+        display: block;
     }
 }
+
 
 section.art > div.text-piece{
     display: flex;
@@ -287,16 +397,108 @@ section.art > div.piece:nth-child(2n){
     background: var(--light-accent);
 }
 
-section.posts {
+section.frontend {
+    grid-area: frontend;
+    background: var(--dark-accent);
+    color: white;
+    padding: 30px;
+    grid-row-gap: 20px;
+    grid-column-gap: 10px;
     display: grid;
-    grid-area: posts;
-    background: var(--light-accent);
+    grid-template-rows: 450px 1fr;
+    grid-template-columns: repeat(3 ifr);
+    grid-template-areas: 
+    " ux ui fr "
+    " desc desc desc "
 }
 
-section.posts > div {
-    height: 200px;
-    width: 400px;
+section.frontend > div {
+    background-size: cover;
+    position: relative;
+}
+
+section.frontend .ux-dev {
+    grid-area: ux;
+    background-image: url('/images/ux.png');
+}
+
+section.frontend .ui-dev {
+    grid-area: ui;
+    background-image: url('/images/ui.png');
+}
+
+section.frontend .frameworks {
+    background-image: url('/images/3d_work.jpg');
+    grid-area: fr;
+}
+
+section.frontend > div > figcaption {
+    position:absolute;
+    font-size: 1.2em;
+    bottom:0;
+    background: var(--dark-accent);
+    color: white;
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity:.7;
+    transition: opacity ease-out .3s;
+}
+
+section.frontend > div:hover > figcaption {
+    opacity: .9;
+}
+
+section.frontend > div > p {
+    color: var(--light-shades);
+}
+
+section.frontend > div > p.figp{
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    bottom: 0;
+    opacity:0;
+    transition: all ease-out .3s;
+    padding: 1em;
+}
+
+section.frontend > div:hover > p.figp {
+    opacity:1;
+    bottom: 20px;
+}
+
+section.frontend .frontend-desc{
+    border-top: 1px solid var(--light-accent);
+    grid-area: desc;
+    margin: 30px;
+}
+
+section.blog {
+    margin-top: -70px;
+    height: 500px;
     background: var(--light-shades);
-    border: solid 2px var(--dark-shades);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.contact {
+    grid-area: contact;
+    background: var(--primary);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+section.contact>div {
+    padding: 20px;
+}
+
+section.contact>div > p{
+    color: var(--light-shades);
 }
 

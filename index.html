@@ -11,12 +11,15 @@
 </head>
 <body>
     <header>
+        <div class="phoneimg">
+            <div class="heroImg"></div>
+        </div>
         <nav>
             <ul>
-                <li>Work</li>
+                <li><a href="#work">Work</a></li>
                 <!-- <li>Artist</li> -->
-                <li>Blog</li>
-                <li>Contact</li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <div class="heading">
@@ -26,29 +29,90 @@
             </p>
             <p>
                 One of my favorite quotes and I find myself going back to it over and over again.  But as software gets more 
-                complicated, this is easier said than done.  This is where I shine!
+                complicated, this is easier said than done.  This is where I come in!
             </p>
         </div>
         <div class="heroImg"></div>
     </header>
-    <section class="software">
+    <section id="work" class="software">
         <div class="overlay"></div>
         <img src="/images/software_development.png" alt="Software Development Background Image">
     </section>
     <section class="software-text">
-        <img src="/images/icon2.png" alt="">
+        <img src="/images/53.svg" alt="53 Prime company logo">
         <p>
-            I am a freelance software developer
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius harum alias porro veritatis dolores ad assumenda molestiae maxime recusandae laborum!
+            If your project requires architectural design, I bring in my partner at <a target="_blank" href="http://www.53prime.com">53prime.com</a> to create the best solution 
+            front end and back.  We focus on a structure that will grow with your business and an experience to empower your clients.  
         </p>
     </section>
     <div class="art-divider"></div>
-    <section class="contact">
-
+    <section id="frontend" class="frontend">
+        <div class="ux-dev">
+            <p class="figp">
+                Well Defined User Stories and Acceptance Criteria, and Epic Journey Maps!
+            </p>
+            <figcaption>User Experience</figcaption>
+        </div>
+        <div class="ui-dev">
+            <p class="figp">
+                An Inviting Look and Feel, with Accessibile and Intuitive Control
+            </p>
+            <figcaption>User Interface</figcaption>
+        </div>
+        <div class="frameworks">
+            <p class="figp">
+                Client Frameworks for Fast Dynamic Data Driven Web-Apps
+            </p>
+            <figcaption>Fast & Dynamic</figcaption>
+        </div>
+        <div class="frontend-desc">
+            <p>
+                <span style="font-weight: bold;font-size: 1.2em">I love working with the users experience.</span>  
+            </p>
+            <p>
+                Whether I'm doing some user experience 
+                research, putting together a user interface or making it fast and dynamic 
+                with a framework.                
+            </p>
+            <p>
+                I can work alone or with your team to strengthen your products 
+                User Experience impact.  I am also available to provide suggestions 
+                for an existing product.
+            </p>
+            <p>
+                My goal is to help you make a product that turns your clients into super-hero's.  
+                Together we won't only make a great product, 
+                we'll make powerful users in your market.
+            </p>
+        </div>
     </section>
-    <section class="art">
+    <div class="frontend-divider"></div>
+    <section id="blog" class="blog">
+    <h2>Posts Coming!</h2>
+    </section>
+    <div class="contact-top"></div>
+    <section id="contact" class="contact">
+        <div class="social">
+            <p>
+                Twitter: @ben_felda
+            </p>
+            <p>
+                LinkedIn: <a href="https://www.linkedin.com/in/ben-felda-26bb035/">Link</a>
+            </p>
+            <p>
+                Youtube: @benfelda
+            </p>
+        </div>
+        <div class="personal">
+            <p>
+                p: 262-224-2735
+            </p>
+            <p>
+                e: ben@benfelda.com
+            </p>
+        </div>
+    </section>
+    <!-- <section class="art">
         <div class="piece">
             <img src="/images/xosome_by_korpus.jpg" alt="">
             <figcaption>Xosome</figcaption>
@@ -81,17 +145,6 @@
     <img src="/images/Waste.jpg" alt="">
     <figcaption>Waste</figcaption>
 </div>
-</section>
-<script>
-    let pieces=document.getElementsByName('piece');
-
-    let clickHandler=(piece)=>{
-        let imgSrc = piece.firstElementChild;
-        console.log(imgSrc);
-    }
-
-    
-
-</script>
+</section> -->
 </body>
 </html>
