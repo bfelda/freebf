@@ -1,0 +1,23 @@
+{
+  "name": "freebf",
+  "version": "1.0.0",
+  "description": "Ben Felda Designs",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bfelda/freebf.git"
+  },
+  "author": "Ben Felda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bfelda/freebf/issues"
+  },
+  "homepage": "https://github.com/bfelda/freebf#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.5.4"
+  }
+}

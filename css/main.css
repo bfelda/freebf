@@ -498,7 +498,8 @@ section.contact>div {
     padding: 20px;
 }
 
-section.contact>div > p{
+section.contact>div > p,
+section.contact>div > p a {
     color: var(--light-shades);
 }
 
