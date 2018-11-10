@@ -9,11 +9,9 @@ body{
     " main "
     " software "
     " software-text "
-    " divider1 "
     " frontend "
-    " divider2 "
+    " frontend-text "
     " blog "
-    " divider3 "
     " contact ";
     scroll-behavior: smooth;
     font-family: 'Montserrat', sans-serif;
@@ -22,6 +20,10 @@ body{
 p{
     font-size: 1.2em;
     line-height: 1.5em;
+}
+
+h1{
+    font-size: 2em;
 }
 
 /* :root{
@@ -48,6 +50,16 @@ p{
 p {
     line-height: 1.7em;
     color: var(--dark-shades);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    opacity: .4;
 }
 
 header{
@@ -150,21 +162,14 @@ section.software > img {
 }
 section.software .overlay {
     clip-path: polygon(100% 1%, 100% 89%, 0 99%, 0 11%);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     background: var(--primary);
-    z-index: 1;
-    opacity: .4;
 }
 
 section.software-text{
     grid-area: software-text;
-    width: 60%;
-    margin: auto;
-    padding: 30px;
+    background: var(--light-shades);
+    padding: 100px 20%;
+    margin: -70px 0 -70px 0;
 }
 
 section.software-text>img{
@@ -190,13 +195,41 @@ div.frontend-divider{
     clip-path: polygon(0 0, 100% 0, 100% 100%);
 }
 
-div.contact-top{
-    grid-area: divider3;
-    margin-top: -70px;
-    height: 70px;
+section.frontend {
+    grid-area: frontend;
+    position: relative;
+    background: url('/images/3d_work.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+}
+
+section.frontend-text{
+    grid-area: frontend-text;
+    background: var(--dark-accent);
+    padding: 100px 20%;
+    margin: -70px 0 -70px 0;
+}
+
+section.frontend-text > p {
+    color: var(--light-shades);
+}
+
+section.frontend > .frontend-head {
+    color: var(--light-shades);
+    height: 100%;
     width: 100%;
-    background: var(--primary);
-    clip-path: polygon(0 0, 100% 100%, 0 100%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+}
+
+section.frontend .overlay{
+    background: var(--dark-shades);
 }
 
 section.art {   
@@ -255,6 +288,12 @@ section.art>div.piece:hover figcaption {
     }
 
 @media(max-width:1024px) {
+
+    
+    section.frontend {
+        height: 400px;
+    }
+
     section.software {
         height: 400px;
         clip-path: polygon(100% 0, 100% 85%, 0 100%, 0 15%);
@@ -301,6 +340,10 @@ section.art>div.piece:hover figcaption {
             width:200px;
         }
 
+        section.frontend {
+            height: 400px;
+        }
+
         section.software {
             height: 400px;
             clip-path: polygon(100% 0, 100% 85%, 0 100%, 0 15%);
@@ -313,10 +356,9 @@ section.art>div.piece:hover figcaption {
             clip-path: polygon(100% 1%, 100% 84%, 0 99%, 0 16%);
         }
 
-        section.software-text{
-            width: auto;
-            margin: auto;
-            padding: 20px;
+        section.software-text,
+        section.frontend-text {
+            padding: 100px 30px;
         }
         
         section.software-text>img{
@@ -397,101 +439,26 @@ section.art > div.piece:nth-child(2n){
     background: var(--light-accent);
 }
 
-section.frontend {
-    grid-area: frontend;
-    background: var(--dark-accent);
-    color: white;
-    padding: 30px;
-    grid-row-gap: 20px;
-    grid-column-gap: 10px;
-    display: grid;
-    grid-template-rows: 450px 1fr;
-    grid-template-columns: repeat(3 ifr);
-    grid-template-areas: 
-    " ux ui fr "
-    " desc desc desc "
-}
-
-section.frontend > div {
-    background-size: cover;
-    position: relative;
-}
-
-section.frontend .ux-dev {
-    grid-area: ux;
-    background-image: url('/images/ux.png');
-}
-
-section.frontend .ui-dev {
-    grid-area: ui;
-    background-image: url('/images/ui.png');
-}
-
-section.frontend .frameworks {
-    background-image: url('/images/3d_work.jpg');
-    grid-area: fr;
-}
-
-section.frontend > div > figcaption {
-    position:absolute;
-    font-size: 1.2em;
-    bottom:0;
-    background: var(--dark-accent);
-    color: white;
-    width:100%;
-    height:100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity:.7;
-    transition: opacity ease-out .3s;
-}
-
-section.frontend > div:hover > figcaption {
-    opacity: .9;
-}
-
-section.frontend > div > p {
-    color: var(--light-shades);
-}
-
-section.frontend > div > p.figp{
-    position: absolute;
-    z-index: 1;
-    text-align: center;
-    bottom: 0;
-    opacity:0;
-    transition: all ease-out .3s;
-    padding: 1em;
-}
-
-section.frontend > div:hover > p.figp {
-    opacity:1;
-    bottom: 20px;
-}
-
-section.frontend .frontend-desc{
-    border-top: 1px solid var(--light-accent);
-    grid-area: desc;
-    margin: 30px;
-}
-
 section.blog {
-    margin-top: -70px;
     height: 500px;
     background: var(--light-shades);
     display: flex;
     align-items: center;
     justify-content: center;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 10%);
 }
 
 section.contact {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    margin-top: -70px;
     grid-area: contact;
     background: var(--primary);
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-items: center;
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
 }
 
 section.contact>div {
