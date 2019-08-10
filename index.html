@@ -17,6 +17,11 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="js/main.js"></script>
     <title>Ben Felda Designs</title>
+    <script>
+        let clicked = (link) => {
+            ga('send', 'event', 'link', 'click', link);
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -25,10 +30,10 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#work">Work</a></li>
+                <li><a onclick="clicked('work')" href="#work">Work</a></li>
                 <!-- <li>Artist</li> -->
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a onclick="clicked('blog')" href="#blog">Blog</a></li>
+                <li><a onclick="clicked('contact')" href="#contact">Contact</a></li>
             </ul>
         </nav>
         <div class="heading">
