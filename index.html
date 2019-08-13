@@ -4,22 +4,23 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145414944-1"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-    gtag('config', 'UA-145414944-1');
+        gtag('config', 'UA-145414944-1');
     </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Montserrat+Subrayada|Varela+Round" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/main.js"></script>
     <title>Ben Felda Designs</title>
     <script>
         let clicked = (link) => {
-            ga('send', 'event', 'link', 'click', link);
+            console.log(link);
+            gtag('event', 'screen_view', {'screen_name': link});
         }
     </script>
 </head>
