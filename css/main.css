@@ -12,6 +12,7 @@ body{
     " frontend "
     " frontend-text "
     " blog "
+    " artwork "
     " contact ";
     scroll-behavior: smooth;
     font-family: 'Montserrat', sans-serif;
@@ -233,14 +234,14 @@ section.frontend .overlay{
 }
 
 section.art {   
-    grid-area: skills;
-    display: none;
+    display: grid;
+    grid-area: artwork;
     grid-gap: 10px;
-    grid-auto-rows: 250px;
+    grid-auto-rows: 300px;
     grid-auto-flow: dense;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     background: var(--dark-accent);
-    padding: 30px;
+    padding: 100px 30px;
 }
 
 section.art > div.piece {

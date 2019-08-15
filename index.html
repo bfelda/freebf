@@ -20,7 +20,11 @@
     <script>
         let clicked = (link) => {
             console.log(link);
-            gtag('event', 'screen_view', {'screen_name': link});
+            gtag('event', 'link_clicked', {
+                'event_category': 'user_interaction',
+                'event_label': link,
+                'non_interaction': true
+            });
         }
     </script>
 </head>
@@ -32,8 +36,8 @@
         <nav>
             <ul>
                 <li><a onclick="clicked('work')" href="#work">Work</a></li>
-                <!-- <li>Artist</li> -->
                 <li><a onclick="clicked('blog')" href="#blog">Blog</a></li>
+                <li><a onclick="clicked('artwork')" href="#artwork">Artwork</a></li>
                 <li><a onclick="clicked('contact')" href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -103,6 +107,44 @@
     <section id="blog" class="blog">
     <h2>Posts Coming!</h2>
     </section>
+    <section class="art" id="artwork">
+        <div class="piece">
+            <img src="/images/xosome_by_korpus.jpg" alt="">
+            <figcaption>Xosome</figcaption>
+        </div>
+        <div class="piece">
+            <img src="/images/3d_work.jpg" alt="">
+            <figcaption>3D work</figcaption>
+        </div>
+        <div class="piece">
+            <img src="/images/detached1.jpg" alt="">
+            <figcaption>Detached</figcaption>
+        </div>
+        <div class="piece">
+            <img src="/images/accouter_by_korpus.jpg" alt="">
+            <figcaption>Accouter</figcaption>
+        </div>
+        <div class="piece">
+            <img src="/images/flameprintsmall.jpg" alt="">
+            <figcaption>Flame-Yang</figcaption>
+        </div>
+        <div class="piece">
+            <img src="/images/form_of_chaos_by_korpus.jpg" alt="">
+            <figcaption>Chaos</figcaption>
+        </div>
+        <div class="piece">
+            <img src="/images/Serenade.jpg" alt="">
+            <figcaption>Serenade</figcaption>
+        </div>
+        <div class="piece">
+            <img src="/images/Waste.jpg" alt="">
+            <figcaption>Waste</figcaption>
+        </div>
+        <div class="piece">
+            <img src="/images/Belle.jpg" alt="">
+            <figcaption>La-Belle</figcaption>
+        </div>
+    </section>
     <div class="contact-top"></div>
     <section id="contact" class="contact">
         <div class="social">
@@ -125,39 +167,5 @@
             </p>
         </div>
     </section>
-    <!-- <section class="art">
-        <div class="piece">
-            <img src="/images/xosome_by_korpus.jpg" alt="">
-            <figcaption>Xosome</figcaption>
-        </div>
-    <div class="piece">
-        <img src="/images/3d_work.jpg" alt="">
-        <figcaption>3D work</figcaption>
-    </div>
-    <div class="piece">
-        <img src="/images/detached1.jpg" alt="">
-        <figcaption>Detached</figcaption>
-    </div>
-    <div class="piece">
-        <img src="/images/accouter_by_korpus.jpg" alt="">
-        <figcaption>Accouter</figcaption>
-    </div>
-<div class="piece">
-    <img src="/images/flameprintsmall.jpg" alt="">
-    <figcaption>Flame-Yang</figcaption>
-</div>
-<div class="piece">
-    <img src="/images/form_of_chaos_by_korpus.jpg" alt="">
-    <figcaption>Chaos</figcaption>
-</div>
-<div class="piece">
-    <img src="/images/Serenade.jpg" alt="">
-    <figcaption>Serenade</figcaption>
-</div>
-<div class="piece">
-    <img src="/images/Waste.jpg" alt="">
-    <figcaption>Waste</figcaption>
-</div>
-</section> -->
 </body>
 </html>
