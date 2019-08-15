@@ -8,6 +8,7 @@
       <stop offset="0" stop-color="#f8a65f"/>
       <stop offset="1" stop-color="#d26c1a"/>
     </linearGradient>
+    
     <linearGradient id="linear-gradient-3" x1="0.419" y1="0.763" x2="0.433" y2="0.33" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#f8a65f"/>
       <stop offset="1" stop-color="#dc853d"/>
