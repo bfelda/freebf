@@ -19,5 +19,8 @@
   "homepage": "https://github.com/bfelda/freebf#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.5.4"
+  },
+  "dependencies": {
+    "nunjucks": "^3.2.0"
   }
 }
