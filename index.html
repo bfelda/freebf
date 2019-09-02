@@ -1,3 +1,47 @@
+---json
+{
+    "title": "Ben Felda Designs",
+    "images": [
+        {
+            "filename": "xosome_by_korpus.jpg",
+            "title":"Xosome"
+        },
+        {
+            "filename": "3d_work.jpg",
+            "title":"3D work"
+        },
+        {
+            "filename": "detached1.jpg",
+            "title":"Detached"
+        },
+        {
+            "filename": "accouter_by_korpus.jpg",
+            "title":"Accouter"
+        },
+        {
+            "filename": "flameprintsmall.jpg",
+            "title":"Flame-Yang"
+        },
+        {
+            "filename": "form_of_chaos_by_korpus.jpg",
+            "title":"Chaos"
+        },
+        {
+            "filename": "Serenade.jpg",
+            "title":"Serenade"
+        },
+        {
+            "filename": "Waste.jpg",
+            "title":"Waste"
+        },
+        {
+            "filename": "Belle.jpg",
+            "title":"La-Belle"
+        }
+    ]
+}
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +60,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Montserrat+Subrayada|Varela+Round" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <title>Ben Felda Designs</title>
+    <title>{{ title }}</title>
     <script>
         let clicked = (link) => {
             console.log(link);
@@ -108,42 +152,12 @@
     <h2>Posts Coming!</h2>
     </section>
     <section class="art" id="artwork">
+        {% for image in images %}
         <div class="piece">
-            <img src="/images/xosome_by_korpus.jpg" alt="">
-            <figcaption>Xosome</figcaption>
+            <img src="/images/{{image.filename}}" alt="">
+            <figcaption>{{image.title}}</figcaption>
         </div>
-        <div class="piece">
-            <img src="/images/3d_work.jpg" alt="">
-            <figcaption>3D work</figcaption>
-        </div>
-        <div class="piece">
-            <img src="/images/detached1.jpg" alt="">
-            <figcaption>Detached</figcaption>
-        </div>
-        <div class="piece">
-            <img src="/images/accouter_by_korpus.jpg" alt="">
-            <figcaption>Accouter</figcaption>
-        </div>
-        <div class="piece">
-            <img src="/images/flameprintsmall.jpg" alt="">
-            <figcaption>Flame-Yang</figcaption>
-        </div>
-        <div class="piece">
-            <img src="/images/form_of_chaos_by_korpus.jpg" alt="">
-            <figcaption>Chaos</figcaption>
-        </div>
-        <div class="piece">
-            <img src="/images/Serenade.jpg" alt="">
-            <figcaption>Serenade</figcaption>
-        </div>
-        <div class="piece">
-            <img src="/images/Waste.jpg" alt="">
-            <figcaption>Waste</figcaption>
-        </div>
-        <div class="piece">
-            <img src="/images/Belle.jpg" alt="">
-            <figcaption>La-Belle</figcaption>
-        </div>
+        {% endfor %}
     </section>
     <div class="contact-top"></div>
     <section id="contact" class="contact">
