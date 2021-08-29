@@ -44,142 +44,209 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145414944-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=UA-145414944-1"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
 
-        gtag('config', 'UA-145414944-1');
-    </script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Montserrat+Subrayada|Varela+Round" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-    <title>{{ title }}</title>
-    <script>
-        let clicked = (link) => {
-            console.log(link);
-            gtag('event', 'link_clicked', {
-                'event_category': 'user_interaction',
-                'event_label': link,
-                'non_interaction': true
-            });
-        }
-    </script>
-</head>
-<body>
-    <header>
-        <div class="phoneimg">
-            <div class="heroImg"></div>
-        </div>
-        <nav>
-            <ul>
-                <li><a onclick="clicked('work')" href="#work">Work</a></li>
-                <li><a onclick="clicked('blog')" href="#blog">Blog</a></li>
-                <li><a onclick="clicked('artwork')" href="#artwork">Artwork</a></li>
-                <li><a onclick="clicked('contact')" href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="heading">
-            <h1>Ben Felda.com</h1>
-            <p class="quote">
-                "A user interface is like a joke.  If you have to explain it, it's not that good."
-            </p>
-            <p>
-                One of my favorite quotes and I find myself going back to it over and over again.  But as software gets more 
-                complicated, this is easier said than done.  This is where I come in!
-            </p>
-        </div>
-        <div class="heroImg"></div>
-    </header>
-    <section id="work" class="software">
-        <div class="overlay"></div>
-        <img src="/images/software_development.png" alt="Software Development Background Image">
-    </section>
-    <section class="software-text">
-        <p>
-                <span style="font-weight: bold;font-size: 1.2em">I love working with the users experience!</span>  
-        </p>
-        <p>
-            Whether I'm doing some user experience 
-            research, putting together a user interface or making it fast and dynamic 
-            with a framework, you'll find me happy and in my zone!                
-        </p>
-        <p>
-            I can work alone or with your team to strengthen your products 
-            User Experience impact.  I am also available to provide suggestions 
-            for an existing product.
-        </p>
-        <p>
-            My goal is to help you make a product that turns your clients into super-hero's.  
-            Together we won't only make a great product, 
-            we'll make powerful users in your market.
-        </p>
-        <!-- <img src="/images/53.svg" alt="53 Prime company logo">
+			gtag("config", "UA-145414944-1");
+		</script>
+
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Montserrat+Subrayada|Varela+Round"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/main.css" />
+		<title>{{ title }}</title>
+		<script>
+			let clicked = (link) => {
+				console.log(link);
+				gtag("event", "link_clicked", {
+					event_category: "user_interaction",
+					event_label: link,
+					non_interaction: true,
+				});
+			};
+		</script>
+	</head>
+	<body>
+		<header>
+			<div class="phoneimg">
+				<div class="heroImg"></div>
+			</div>
+			<nav>
+				<ul>
+					<li><a onclick="clicked('work')" href="#work">Work</a></li>
+					<li>
+						<a onclick="clicked('funstuff')" href="#funstuff"
+							>funstuff</a
+						>
+					</li>
+					<li>
+						<a onclick="clicked('artwork')" href="#artwork"
+							>Artwork</a
+						>
+					</li>
+					<li>
+						<a onclick="clicked('contact')" href="#contact"
+							>Contact</a
+						>
+					</li>
+				</ul>
+			</nav>
+			<div class="heading">
+				<h1>Ben Felda.com</h1>
+				<p class="quote">
+					"A user interface is like a joke. If you have to explain it,
+					it's not that good."
+				</p>
+				<p>
+					One of my favorite quotes and I find myself going back to it
+					over and over again. But as software gets more complicated,
+					this is easier said than done. This is where I come in!
+				</p>
+			</div>
+			<div class="heroImg"></div>
+		</header>
+		<section id="work" class="software">
+			<div class="overlay"></div>
+			<img
+				src="/images/software_development.png"
+				alt="Software Development Background Image"
+			/>
+		</section>
+		<section class="software-text">
+			<p>
+				<span style="font-weight: bold; font-size: 1.2em"
+					>I love working with the users experience!</span
+				>
+			</p>
+			<p>
+				Whether I'm doing some user experience research, putting
+				together a user interface or making it fast and dynamic with a
+				framework, you'll find me happy and in my zone!
+			</p>
+			<p>
+				I can work alone or with your team to strengthen your products
+				User Experience impact. I am also available to provide
+				suggestions for an existing product.
+			</p>
+			<p>
+				My goal is to help you make a product that turns your clients
+				into super-hero's. Together we won't only make a great product,
+				we'll make powerful users in your market.
+			</p>
+			<!-- <img src="/images/53.svg" alt="53 Prime company logo">
         <p>
             If your project requires architectural design, I bring in my partner at <a target="_blank" href="http://www.53prime.com">53prime.com</a> to create the best solution 
             front end and back.  We focus on a structure that will grow with your business and an experience to empower your clients.  
         </p> -->
-    </section>
-    <section id="frontend" class="frontend">
-        <div class="overlay"></div>
-        <div class="frontend-head">
-            <h1>Illustration</h1>
-            <h1>3d Rendering</h1>
-        </div>
-    </section>
-    <section class="frontend-text">
-    <p>
-            <span style="font-weight: bold;font-size: 1.2em">Animation, Illustration and some 3d!</span>  
-    </p>
-    <p>
-        Sometimes a picture isn't enough.  An interactive illustration, (especially animated), is 
-        going to entertain your audience encouraging them to keep working with your 
-        product and continue learning how your product is the best!
-    </p>
-    <p>
-        Did you know you can do 3d on the web?  Well you can and it is amazing!  
-        If you have a hardware product, what better way to show it off than let your 
-        user interact with it!
-    </p>
-    </section>
-    <section id="blog" class="blog">
-    <h2>Posts Coming!</h2>
-    </section>
-    <section class="art" id="artwork">
-        {% for image in images %}
-        <div class="piece">
-            <img src="/images/{{image.filename}}" alt="">
-            <figcaption>{{image.title}}</figcaption>
-        </div>
-        {% endfor %}
-    </section>
-    <div class="contact-top"></div>
-    <section id="contact" class="contact">
-        <div class="social">
-            <p>
-                <a href="https://twitter.com/ben_felda" target="_blank">Twitter</a>
-            </p>
-            <p>
-                <a href="https://www.linkedin.com/in/ben-felda-26bb035/" target="_blank">Linkedin</a>
-            </p>
-            <p>
-                <a href="https://www.facebook.com/ben.felda" target="_blank">Facebook</a>
-            </p>
-        </div>
-        <div class="personal">
-            <p>
-                p: 262-224-2735
-            </p>
-            <p>
-                e: ben@benfelda.com
-            </p>
-        </div>
-    </section>
-</body>
+		</section>
+		<section id="frontend" class="frontend">
+			<div class="overlay"></div>
+			<div class="frontend-head">
+				<h1>Illustration</h1>
+				<h1>3d Rendering</h1>
+			</div>
+		</section>
+		<section class="frontend-text">
+			<p>
+				<span style="font-weight: bold; font-size: 1.2em"
+					>Animation, Illustration and some 3d!</span
+				>
+			</p>
+			<p>
+				Sometimes a picture isn't enough. An interactive illustration,
+				(especially animated), is going to entertain your audience
+				encouraging them to keep working with your product and continue
+				learning how your product is the best!
+			</p>
+			<p>
+				Did you know you can do 3d on the web? Well you can and it is
+				amazing! If you have a hardware product, what better way to show
+				it off than let your user interact with it!
+			</p>
+		</section>
+		<section id="funstuff" class="funstuff">
+			<div id="login_anime">
+				<a target="_blank" href="/login">
+					<img
+						src="/images/Login_anime.JPG"
+						alt="Link to Login User Interface"
+					/>
+					<figcaption>Login Fun Animation Experience</figcaption>
+				</a>
+			</div>
+			<div id="subscribe_anime">
+				<a target="_blank" href="/subscribe/">
+					<img
+						src="/images/subscribe_anime.JPG"
+						alt="Link to surpise user interface"
+					/>
+					<figcaption>Suprise Fun Animation Experience</figcaption>
+				</a>
+			</div>
+			<div id="suprise_anime">
+				<a target="_blank" href="/suprise/">
+					<img
+						src="/images/suprise_anime.JPG"
+						alt="Link to the subscribe user interface"
+					/>
+					<figcaption>Subscribe Fun Animation Experience</figcaption>
+				</a>
+			</div>
+		</section>
+		<section class="funstufftext">
+			<p>
+				I love playing around with CSS, HTML, SVG, JS/TS and here are
+				some of my playground experiments. Click the above to experience
+				them.
+			</p>
+		</section>
+		<section class="art" id="artwork">
+			{% for image in images %}
+			<div class="piece">
+				<img src="/images/{{image.filename}}" alt="" />
+				<figcaption>{{image.title}}</figcaption>
+			</div>
+			{% endfor %}
+		</section>
+		<div class="contact-top"></div>
+		<section id="contact" class="contact">
+			<div class="social">
+				<p>
+					<a href="https://twitter.com/ben_felda" target="_blank"
+						>Twitter</a
+					>
+				</p>
+				<p>
+					<a
+						href="https://www.linkedin.com/in/ben-felda-26bb035/"
+						target="_blank"
+						>Linkedin</a
+					>
+				</p>
+				<p>
+					<a href="https://www.facebook.com/ben.felda" target="_blank"
+						>Facebook</a
+					>
+				</p>
+			</div>
+			<div class="personal">
+				<p>p: 262-224-2735</p>
+				<p>e: ben@benfelda.com</p>
+			</div>
+		</section>
+	</body>
 </html>

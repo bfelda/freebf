@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+    <style>
+        body {
+            background: slategray;
+        }
+    </style>
+</head>
+<body>
+</body>
+<script src="../lib/mo.js"></script>
+<script>
+const starburst = new mojs.Burst({
+    radius: {0:200},
+    count: 15,
+    children: {
+        fill: 'orange',
+        points: 7,
+        angle: {'-360': 0},
+        radius: {
+            10: 5
+        },
+        opacity: {1:0},
+        duration: 2000
+    }
+});
+
+const starburst2 = new mojs.Burst({
+    radius: {0:400},
+    count: 20,
+    children: {
+        fill: 'lightgreen',
+        points: 7,
+        angle: {'90': 0},
+        radius: {
+            10: 5
+        },
+        opacity: {1:0},
+        duration: 1500
+    }
+});
+
+const circ_opt = {
+    radius: {50:200},
+    fill: 'none',
+    stroke: 'yellow',
+    duration: 1500,
+    opacity: {1:0}
+};
+
+const circ = new mojs.Shape({
+    ...circ_opt
+});
+
+const circ2 = new mojs.Shape({
+    ...circ_opt,
+    delay: 500
+});
+
+const burstTl = new mojs.Timeline({
+}).add(starburst,starburst2, circ, circ2);
+
+setInterval(() => {
+    burstTl.play();
+}, 2000);
+</script>
+</html>
