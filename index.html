@@ -213,13 +213,17 @@
 				some of my playground experiments. Click the above to experience
 				them.
 			</p>
+			<p>
+				Below are pieces of my artwork, some commissioned, many tattoed
+				on people around the world, all pieces I am proud of.
+			</p>
 		</section>
 		<section class="art" id="artwork">
 			{% for image in images %}
-			<div class="piece">
+			<a class="piece" target="_blank" href="/images/{{image.filename}}">
 				<img src="/images/{{image.filename}}" alt="" />
 				<figcaption>{{image.title}}</figcaption>
-			</div>
+			</a>
 			{% endfor %}
 		</section>
 		<div class="contact-top"></div>
